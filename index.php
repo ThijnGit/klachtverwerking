@@ -49,12 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Bericht is verzonden!";
         
         $log = new Logger('klachten');
-        $log->pushHandler(new StreamHandler(__DIR__ . '/info.log', Logger::INFO));
+        $log->pushHandler(new StreamHandler(__DIR__ . '/info.log', logger::INFO));
         $log->info("Nieuwe klacht van $naam_user, Email: $email_user, Klacht: $beschrijvingklacht");
     } catch (Exception $e) {
         echo "Bericht kon niet worden verzonden. Mailer Error: {$mail->ErrorInfo}";
     }
 }
 
-
+//oh oh
 ?>
